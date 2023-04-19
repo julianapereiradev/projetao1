@@ -1,7 +1,127 @@
 * {
     box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
 }
 
-body {
+.body {
     font-family: 'Roboto', sans-serif;
+}
+
+/* Normalize */
+
+.quizz-t2 button {
+    border: none;
+    outline: none;
+}
+
+.quizz-t2 img {
+    width: inherit;
+    height: inherit;
+}
+
+
+/* Utilitários*/
+
+.center-t2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Organizado em ordem na estruturação do HTML */
+
+.quizz-t2 {
+    position: absolute;
+    width: 100%;
+    background-color: #FAFAFA;
+    z-index: 1;
+}
+
+.quizz-t2 .banner-t2 {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 142px;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.quizz-t2 .banner-t2 img {
+    z-index: -1;
+
+    object-fit: cover;
+}
+
+.quizz-t2 .banner-t2 h2 {
+    color: #FFFFFF;
+    position: absolute;
+
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+.quizz-t2 .question-t2 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    background-color: #FFFFFF;
+    width: 375px;
+    height: 436px;
+    padding: 18px;
+    margin: 24px auto 14px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+}
+
+.quizz-t2 .question-t2 h3 {
+    width: 100%;
+    height: 89px;
+
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.quizz-t2 .question-t2 .answer-t2 {
+    display: inline-block;
+    margin-bottom: auto;
+}
+
+.quizz-t2 .question-t2 .answer-t2 p {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 15px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.quizz-t2 .question-t2 .answer-t2 img {
+    height: 113px;
+    width: 163px;
+}
+
+
+@media only screen and (min-width: 1100px) {
+    .quizz-t2 .banner-t2 h2 {
+        font-size: 39px;
+        line-height: 46px;
+    }
+
+    .quizz-t2 .question-t2 h3 {
+        height: 138px;
+        font-size: 23px;
+        line-height: 27px;
+    }
+
+    .quizz-t2 .question-t2 .answer-t2 img {
+        height: 175.20184326171875px;
+        width: 329.9119873046875px;
+    }
 }
