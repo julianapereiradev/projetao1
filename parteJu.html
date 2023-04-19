@@ -17,13 +17,13 @@
 </head>
 
 <body>
-    <div class="primeiraTela-t3 escondido-t3">
+    <!-- <div class="primeiraTela-t3">
         <div class="header-t3">BuzzQuizz</div>
         <div class="main-t3">
             <h1 class="h1-main-t3">Comece pelo começo</h1>
             <div class="box-main-t3">
-                <input class="input-main-t3" type="text" placeholder="Título do seu quizz" data-test="title-input">
-                <input class="input-main-t3" type="text" placeholder="URL da imagem do seu quizz" data-test="img-input">
+                <input class="input-main-t3 criar-titulo-quizz" type="text" placeholder="Título do seu quizz" data-test="title-input">
+                <input class="input-main-t3 criar-imagem-quizz" type="text" placeholder="URL da imagem do seu quizz" data-test="img-input">
                 <input class="input-main-t3" type="text" placeholder="Quantidade de perguntas do quizz"
                     data-test="questions-amount-input">
                 <input class="input-main-t3" type="text" placeholder="Quantidade de níveis do quizz"
@@ -84,7 +84,7 @@
     </div>
 
 
-    <div class="terceiraTela-t3 escondido-t3">
+    <div class="terceiraTela-t3  escondido-t3">
         <div class="header-t3">BuzzQuizz</div>
         <div class="main-t3">
             <h1 class="h1-main-t3">Agora, decida os níveis</h1>
@@ -111,13 +111,13 @@
                     <img src="./assets/icon-create.png" class="new-questions-img-t3">
                 </button>
             </div>
-            <button class="button-main-t3" data-test="finish">Finalizar Quizz</button>
+            <button class="button-main-t3" onclick="enviarQuizz()" data-test="finish">Finalizar Quizz</button>
         </div>
         <div class="footer-t3"></div>
     </div>
 
 
-    <div class="quartaTela-t3">
+    <div class="quartaTela-t3 escondido-t3">
         <div class="header-t3">BuzzQuizz</div>
         <div class="main-t3">
             <h1 class="h1-main-t3">Seu quizz está pronto!</h1>
@@ -128,7 +128,14 @@
             <button class="button-accessQuiz-t3" data-test="go-quiz">Acessar Quizz</button>
             <button class="button-backHome-t3" data-test="go-home">Voltar para home</button>
         </div>
-    </div>
+    </div> -->
+    <header class="header-t3">
+        <h1 class="titulo-buzzQuizz-t3">BuzzQuizz</h1>
+      </header>
+      <main class="main-t3">
+        <div class="principal"></div>
+      </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="./scripts/screen-3.js"></script>
 </body>
