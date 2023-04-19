@@ -133,6 +133,15 @@ body {
     justify-content: space-between;
 }
 
+.new-questions-button-t3 {
+    background-color: transparent;
+    border: none;
+}
+
+.new-questions-img-t3 {
+    width: 22px;
+}
+
 .footer-t3 {
     width: 100%;
     height: 500px;

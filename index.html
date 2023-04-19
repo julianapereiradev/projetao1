@@ -89,12 +89,14 @@
         <div class="main-t3">
             <h1 class="h1-main-t3">Comece pelo começo</h1>
             <div class="box-main-t3">
-                <input class="input-main-t3" type="text" placeholder="Título do seu quizz">
-                <input class="input-main-t3" type="text" placeholder="URL da imagem do seu quizz">
-                <input class="input-main-t3" type="text" placeholder="Quantidade de perguntas do quizz">
-                <input class="input-main-t3" type="text" placeholder="Quantidade de níveis do quizz">
+                <input class="input-main-t3" type="text" placeholder="Título do seu quizz" data-test="title-input">
+                <input class="input-main-t3" type="text" placeholder="URL da imagem do seu quizz" data-test="img-input">
+                <input class="input-main-t3" type="text" placeholder="Quantidade de perguntas do quizz"
+                    data-test="questions-amount-input">
+                <input class="input-main-t3" type="text" placeholder="Quantidade de níveis do quizz"
+                    data-test="levels-amount-input">
             </div>
-            <button class="button-main-t3">Prosseguir para criar perguntas</button>
+            <button class="button-main-t3" data-test="go-create-questions">Prosseguir para criar perguntas</button>
         </div>
     </div>
 
@@ -103,28 +105,47 @@
         <div class="header-t3">BuzzQuizz</div>
         <div class="main-t3">
             <h1 class="h1-main-t3">Crie suas perguntas</h1>
-            <div class="box-secondScreen-t3">
+            <div class="box-secondScreen-t3" data-test="question-ctn">
                 <div class="category-t3">Pergunta 1</div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Texto da pergunta">
-                <input class="input-secondScreen-t3" type="text" placeholder="Cor de fundo da pergunta">
+                <input class="input-secondScreen-t3" type="text" placeholder="Texto da pergunta"
+                    data-test="question-input">
+                <input class="input-secondScreen-t3" type="text" placeholder="Cor de fundo da pergunta"
+                    data-test="question-color-input">
                 <div class="category-t3">Resposta correta</div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Resposta correta">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem">
+                <input class="input-secondScreen-t3" type="text" placeholder="Resposta correta"
+                    data-test="correct-answer-input">
+                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem"
+                    data-test="correct-img-input">
                 <div class="category-t3">Respostas incorretas</div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 1">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 1">
+                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 1"
+                    data-test="wrong-answer-input">
+                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 1"
+                    data-test="wrong-img-input">
                 <div class="space-between-inputs"></div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 2">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 2">
+                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 2"
+                    data-test="wrong-answer-input">
+                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 2"
+                    data-test="wrong-img-input">
                 <div class="space-between-inputs"></div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 3">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 3">
+                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 3"
+                    data-test="wrong-answer-input">
+                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 3"
+                    data-test="wrong-img-input">
             </div>
 
-            <div class="new-questions-t3">Pergunta 2<ion-icon name="create-outline"></ion-icon></div>
-            <div class="new-questions-t3">Pergunta 3<ion-icon name="create-outline"></ion-icon></div>
-
-            <button class="button-main-t3">Prosseguir para criar níveis</button>
+            <div class="new-questions-t3" data-test="question-ctn">
+                <div class="new-question-text-t3">Pergunta 2</div>
+                <button class="new-questions-button-t3" data-test="toggle">
+                    <img src="./assets/icon-create.png" class="new-questions-img-t3">
+                </button>
+            </div>
+            <div class="new-questions-t3" data-test="question-ctn">
+                <div class="new-question-text-t3">Pergunta 3</div>
+                <button class="new-questions-button-t3" data-test="toggle">
+                    <img src="./assets/icon-create.png" class="new-questions-img-t3">
+                </button>
+            </div>
+            <button class="button-main-t3" data-test="go-create-levels">Prosseguir para criar níveis</button>
         </div>
         <div class="footer-t3"></div>
     </div>
@@ -134,22 +155,30 @@
         <div class="header-t3">BuzzQuizz</div>
         <div class="main-t3">
             <h1 class="h1-main-t3">Agora, decida os níveis</h1>
-            <div class="box-thirdScreen-t3">
+            <div class="box-thirdScreen-t3" data-test="level-ctn">
                 <div class="category-t3">Nível 1</div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Título do nível">
-                <input class="input-secondScreen-t3" type="text" placeholder="% de acerto mínima">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem do nível">
-                <!-- <input class="input-secondScreen-t3" type="text" placeholder="Descrição do nível"> -->
-                <textarea 
-                class="textarea-thirdScreen-t3" 
-                placeholder="Descrição do nível"></textarea>
+                <input class="input-secondScreen-t3" type="text" placeholder="Título do nível" data-test="level-input">
+                <input class="input-secondScreen-t3" type="text" placeholder="% de acerto mínima"
+                    data-test="level-percent-input">
+                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem do nível"
+                    data-test="level-img-input">
+                <textarea class="textarea-thirdScreen-t3" placeholder="Descrição do nível"
+                    data-test="level-description-input"></textarea>
             </div>
 
-            <div class="new-questions-t3">Nível 2<ion-icon name="create-outline"></ion-icon></div>
-
-            <div class="new-questions-t3">Nível 3<ion-icon name="create-outline"></ion-icon></div>
-
-            <button class="button-main-t3">Finalizar Quizz</button>
+            <div class="new-questions-t3" data-test="level-ctn">
+                <div class="new-question-text-t3">Nível 1</div>
+                <button class="new-questions-button-t3"  data-test="toggle">
+                    <img src="./assets/icon-create.png" class="new-questions-img-t3">
+                </button>
+            </div>
+            <div class="new-questions-t3" data-test="level-ctn">
+                <div class="new-question-text-t3">Nível 2</div>
+                <button class="new-questions-button-t3"  data-test="toggle">
+                    <img src="./assets/icon-create.png" class="new-questions-img-t3">
+                </button>
+            </div>
+            <button class="button-main-t3" data-test="finish">Finalizar Quizz</button>
         </div>
         <div class="footer-t3"></div>
     </div>
@@ -159,9 +188,12 @@
         <div class="header-t3">BuzzQuizz</div>
         <div class="main-t3">
             <h1 class="h1-main-t3">Seu quizz está pronto!</h1>
-            <div class="imagem-aqui-t3">.</div>
-            <button class="button-accessQuiz-t3">Acessar Quizz</button>
-            <button class="button-backHome-t3">Voltar para home</button>
+            <div class="imagem-aqui-t3" data-test="success-banner">
+                <div class="title-img-quizzDone-t3">O quão potterhead...</div>
+                <img src="" alt=" tag img com a imagem retornada do servidor">
+            </div>
+            <button class="button-accessQuiz-t3" data-test="go-quiz">Acessar Quizz</button>
+            <button class="button-backHome-t3" data-test="go-home">Voltar para home</button>
         </div>
     </div>
     <!-- Fim da Tela 3-->
