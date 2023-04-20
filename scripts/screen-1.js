@@ -1,6 +1,20 @@
 axios.defaults.headers.common['Authorization'] = 'ylQIQq1xH2RbNTiDYd7ky2cm'; 
 let todosQuizzes = [];
 
+function decideLayout() {
+    const idsSerializados = localStorage.getItem('ids');
+    const idsDeserializados = JSON.parse(idsSerializados);
+    const semQuiz = document.querySelector('.usuario-sem-quiz-t1');
+    const comQuiz = document.querySelector('.usuario-com-quiz-t1');
+    if (idsDeserializados.length === 0 || idsDeserializados.length === null || idsDeserializados.length === undefined) {
+        semQuiz.classList.remove('escondido');
+        comQuiz.classList.add('escondido');
+    } else {
+        semQuiz.classList.add('escondido');
+        comQuiz.classList.remove('escondido');
+    }
+}
+
 function renderizaQuizzes() {
     const layout = document.querySelector('.caixas-quizzes-t1');
     layout.innerHTML = '';
@@ -23,3 +37,4 @@ function pegaQuizzes() {
 }
 
 pegaQuizzes();
+decideLayout();
