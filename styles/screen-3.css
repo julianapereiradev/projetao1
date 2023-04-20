@@ -52,36 +52,60 @@ body {
   height: 256px;
   margin-top: 27px;
   background: #FFFFFF;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 15px;
 }
 
-.segundaTela-t3 a {
+.segundaTela-t3 {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 23px;
   line-height: 27px;
+  width: 100%;
 }
 
-.segundaTela-t3 {
-  margin-top: 27px;
+.div-Flex-t3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .box-perguntas-t3 {
+  width: 800px;
+  padding: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: center;
-}  
+  align-items: center;
+
+}
 
 .main-perguntas-t3 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  margin-top: 63px;
 }
 
-.main-perguntas-t3 > p {
+.main-perguntas-t3>p {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 23px;
+  line-height: 27px;
+  margin-left: 15px;
+}
+
+.main-niveis-t3>p {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -172,9 +196,8 @@ body {
 
 input {
   height: 46px;
-  width: 564px;
-  margin-top: 12px;
-  margin-left: 15px;
+  width: 100%;
+  margin-bottom: 10px;
   border-radius: 5px;
   border: 1px solid #D1D1D1;
   border-radius: 5px;
@@ -208,6 +231,9 @@ button {
   border-radius: 15px;
   border: none;
   margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 21.09px;
+  color: white;
 }
 
 button a {
@@ -217,6 +243,10 @@ button a {
   font-size: 21px;
   line-height: 25px;
   color: #FFF5F4;
+}
+
+.textoECorPergunta {
+  margin-top: 30px;
 }
 
 .nivel {
@@ -267,14 +297,10 @@ button a {
   margin-bottom: 10px;
 }
 
-.container-pergunta {
-  height: 825px;
-  width: 600px;
-  background-color: white;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-  margin-top: 36px;
+.renderizaNiveis {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  padding: 15px;
 }
-
 
 @media (max-width: 1100px) {
 
@@ -282,22 +308,20 @@ button a {
   .segundaTela-t3,
   .box-perguntas-t3,
   .main-perguntas-t3,
-  .renderizaPerguntas {
-    width: 375px;
+  .renderizaPerguntas,
+  .renderizaNiveis {
+    width: 100%;
   }
 
   .box-main-t3 input {
-    width: 90%;
+    width: 100%;
   }
 
-  .buttonCriarPerguntas,
   .buttonCriarNiveis,
-  .renderizaNiveis,
   .buttonFinalizarQuizz {
     width: 325px;
   }
 
-  .buttonCriarPerguntas,
   .buttonCriarNiveis a,
   .buttonFinalizarQuizz {
     font-size: 18px;
@@ -305,34 +329,19 @@ button a {
     color: white;
   }
 
-  .textoECorPergunta,
-  .respostaCorreta,
-  .respostasIncorretas {
-    width: 375px;
-    max-width: 375px;
-  }
-
   .container-pergunta {
-    width: 375px;
+    width: 100%;
   }
 
   .container-pergunta input {
-    width: 90%;
+    width: 100%;
   }
 
-  .nivel {
-    width: 375px;
+  .container-niveis {
+    width: 100%;
   }
 
   .nivel input {
-    width: 90%;
+    width: 100%;
   }
-
-  .imgQuizzDoInicio,
-  .renderizaImgQuizz,
-  .degradeQuizzFinal {
-    max-width: 340px;
-    width: 340px;
-  }
-
 }
