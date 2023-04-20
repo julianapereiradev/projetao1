@@ -88,17 +88,17 @@ function renderizarPerguntasQuizz() {
     renderizaPerguntas.innerHTML += `
     <div class="container-pergunta">
     <div class="textoECorPergunta">
-      <a>Pergunta ${i + 1}</a>
+      <p>Pergunta ${i + 1}</p>
       <input class ="tituloPergunta1" type="text" placeholder="Texto da pergunta">
       <input class="corDaPergunta" type="text" placeholder="Cor de fundo da pergunta">
     </div>
     <div class="respostaCorreta">
-      <a>Resposta Correta</a>
+      <p>Resposta Correta</p>
       <input class="respostaCorretaTexto" type="text" placeholder="Resposta correta">
       <input class="respostaCorretaImg" type="text" placeholder="URL da imagem">
     </div>
     <div class="respostasIncorretas">
-      <a>Respostas Incorretas</a>
+      <p>Respostas Incorretas</p>
       <input class="respostaIncorreta1" type="text" placeholder="Resposta incorreta 1">
       <input class="imagemIncorreta1" type="text" placeholder="URL da imagem 1">
       <input class="respostaIncorreta2 marginTop" type="text" placeholder="Resposta incorreta 2">
@@ -206,7 +206,7 @@ function renderizarNiveisQuizz() {
   for (let i = 0; i < qntNivel; i++) {
     renderizaNiveis.innerHTML += `
     <div class="nivel container-niveis">
-    <a>Nível ${i + 1}</a>
+    <p>Nível ${i + 1}</p>
     <input class="tituloNivel1" type="text" placeholder="Título do nível">
     <input class="porcentagNivel1" type="text" placeholder="% de acerto mínima">
     <input class="imagemNivel1" type="text" placeholder="URL da imagem do nível">
