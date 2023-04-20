@@ -17,127 +17,67 @@
 </head>
 
 <body>
-    <!-- <div class="primeiraTela-t3">
-        <div class="header-t3">BuzzQuizz</div>
-        <div class="main-t3">
-            <h1 class="h1-main-t3">Comece pelo começo</h1>
-            <div class="box-main-t3">
-                <input class="input-main-t3 criar-titulo-quizz" type="text" placeholder="Título do seu quizz" data-test="title-input">
-                <input class="input-main-t3 criar-imagem-quizz" type="text" placeholder="URL da imagem do seu quizz" data-test="img-input">
-                <input class="input-main-t3" type="text" placeholder="Quantidade de perguntas do quizz"
-                    data-test="questions-amount-input">
-                <input class="input-main-t3" type="text" placeholder="Quantidade de níveis do quizz"
-                    data-test="levels-amount-input">
-            </div>
-            <button class="button-main-t3" data-test="go-create-questions">Prosseguir para criar perguntas</button>
+    <div class="header-t3">BuzzQuizz</div>
+
+    <div class="telaZeroHome-t3">
+        <div>
+            <button onclick="criarQuizz()"> Criar Quizz </button>
         </div>
     </div>
 
+    <div class="primeiraTela-t3 escondido-t3">
+        <div class="main-t3">
+            <div class="p-main-t3">
+                <p>Comece pelo começo</p>
+            </div>
+            <div class="box-main-t3">
+                <input class="tituloDoQuizz-t3" type="text" placeholder="Título do seu quizz">
+                <input class="imagemDoQUizz-t3" type="url" placeholder="URL da imagem do seu quizz">
+                <input class="qtdePerguntas-t3" type="number" placeholder="Quantidade de perguntas do quizz">
+                <input class="qtdeNiveis-t3" type="number" placeholder="Quantidade de níveis do quizz">
+            </div>
+            <button class="buttonCriarPerguntas" onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
+        </div>
+    </div>
 
     <div class="segundaTela-t3 escondido-t3">
-        <div class="header-t3">BuzzQuizz</div>
-        <div class="main-t3">
-            <h1 class="h1-main-t3">Crie suas perguntas</h1>
-            <div class="box-secondScreen-t3" data-test="question-ctn">
-                <div class="category-t3">Pergunta 1</div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Texto da pergunta"
-                    data-test="question-input">
-                <input class="input-secondScreen-t3" type="text" placeholder="Cor de fundo da pergunta"
-                    data-test="question-color-input">
-                <div class="category-t3">Resposta correta</div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Resposta correta"
-                    data-test="correct-answer-input">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem"
-                    data-test="correct-img-input">
-                <div class="category-t3">Respostas incorretas</div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 1"
-                    data-test="wrong-answer-input">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 1"
-                    data-test="wrong-img-input">
-                <div class="space-between-inputs"></div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 2"
-                    data-test="wrong-answer-input">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 2"
-                    data-test="wrong-img-input">
-                <div class="space-between-inputs"></div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Resposta incorreta 3"
-                    data-test="wrong-answer-input">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem 3"
-                    data-test="wrong-img-input">
+        <div class="box-perguntas-t3">
+            <div class="main-perguntas-t3">
+                <p>Crie suas perguntas</p>
+                <div class="renderizaPerguntas"></div>
             </div>
-
-            <div class="new-questions-t3" data-test="question-ctn">
-                <div class="new-question-text-t3">Pergunta 2</div>
-                <button class="new-questions-button-t3" data-test="toggle">
-                    <img src="./assets/icon-create.png" class="new-questions-img-t3">
-                </button>
-            </div>
-            <div class="new-questions-t3" data-test="question-ctn">
-                <div class="new-question-text-t3">Pergunta 3</div>
-                <button class="new-questions-button-t3" data-test="toggle">
-                    <img src="./assets/icon-create.png" class="new-questions-img-t3">
-                </button>
-            </div>
-            <button class="button-main-t3" data-test="go-create-levels">Prosseguir para criar níveis</button>
+            <button class="buttonCriarNiveis" onclick="criarNiveis()">
+                <a>Prosseguir para níveis</a>
+            </button>
         </div>
-        <div class="footer-t3"></div>
     </div>
 
-
-    <div class="terceiraTela-t3  escondido-t3">
-        <div class="header-t3">BuzzQuizz</div>
-        <div class="main-t3">
-            <h1 class="h1-main-t3">Agora, decida os níveis</h1>
-            <div class="box-thirdScreen-t3" data-test="level-ctn">
-                <div class="category-t3">Nível 1</div>
-                <input class="input-secondScreen-t3" type="text" placeholder="Título do nível" data-test="level-input">
-                <input class="input-secondScreen-t3" type="text" placeholder="% de acerto mínima"
-                    data-test="level-percent-input">
-                <input class="input-secondScreen-t3" type="text" placeholder="URL da imagem do nível"
-                    data-test="level-img-input">
-                <textarea class="textarea-thirdScreen-t3" placeholder="Descrição do nível"
-                    data-test="level-description-input"></textarea>
-            </div>
-
-            <div class="new-questions-t3" data-test="level-ctn">
-                <div class="new-question-text-t3">Nível 1</div>
-                <button class="new-questions-button-t3"  data-test="toggle">
-                    <img src="./assets/icon-create.png" class="new-questions-img-t3">
-                </button>
-            </div>
-            <div class="new-questions-t3" data-test="level-ctn">
-                <div class="new-question-text-t3">Nível 2</div>
-                <button class="new-questions-button-t3"  data-test="toggle">
-                    <img src="./assets/icon-create.png" class="new-questions-img-t3">
-                </button>
-            </div>
-            <button class="button-main-t3" onclick="enviarQuizz()" data-test="finish">Finalizar Quizz</button>
+    <div class="box-niveis-t3 escondido-t3">
+        <div class="main-niveis-t3">
+            <div><a>Agora, decida os níveis<a></div>
+            <div class="renderizaNiveis"></div>
+            <button class="buttonFinalizarQuizz" onclick="finalizarQuizz()">Finalizar Quizz</button>
         </div>
-        <div class="footer-t3"></div>
     </div>
 
-
-    <div class="quartaTela-t3 escondido-t3">
-        <div class="header-t3">BuzzQuizz</div>
-        <div class="main-t3">
-            <h1 class="h1-main-t3">Seu quizz está pronto!</h1>
-            <div class="imagem-aqui-t3" data-test="success-banner">
-                <div class="title-img-quizzDone-t3">O quão potterhead...</div>
-                <img src="" alt=" tag img com a imagem retornada do servidor">
-            </div>
-            <button class="button-accessQuiz-t3" data-test="go-quiz">Acessar Quizz</button>
-            <button class="button-backHome-t3" data-test="go-home">Voltar para home</button>
+    <div class="ultimaTela-t3 escondido-t3">
+        <div class="box-final-t3">
+            <h3>Seu Quizz está pronto!</h3>
+            <div class="renderizaImgQuizz"></div>
+            <button class="acessarQuizz" onClick="acessarOQuizTela2()">
+                <a>Acessar Quizz</a>
+            </button>
+            <button class="buttonHome" onClick="voltarInicioTela1()">
+                <a class="voltar">Voltar para Home</a>
+            </button>
         </div>
-    </div> -->
-    <header class="header-t3">
-        <h1 class="titulo-buzzQuizz-t3">BuzzQuizz</h1>
-      </header>
-      <main class="main-t3">
-        <div class="principal"></div>
-      </main>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
-    <script src="./scripts/screen-3.js"></script>
+    </div>
+
+</body>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="./scripts/screen-3.js"></script>
 </body>
 
 </html>
