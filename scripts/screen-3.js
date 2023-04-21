@@ -1,6 +1,5 @@
 axios.defaults.headers.common['Authorization'] = 'ylQIQq1xH2RbNTiDYd7ky2cm';
 
-
 let urlBase = 'https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes';
 let tituloDoQuizz;
 let imagemDoQuizz
@@ -12,8 +11,8 @@ let qntPergunta;
 let qntNivel;
 let pergunta;
 let objetoDoPost;
+let idsQuizzesUsuario = [];
 // let porcentagemDosNiveis = []
-
 
 function criarQuizz() {
 
@@ -288,7 +287,9 @@ function postCriarQuizz() {
 
 function sucessoAoPostarQuizz(respostaSucessoAoPostarQuizz) {
   console.log('respostaSucessoAoPostarQuizz aqui:', respostaSucessoAoPostarQuizz)
-  
+  idsQuizzesUsuario.push(respostaSucessoAoPostarQuizz.data.id);
+  let idsSerializados = JSON.stringify(idsQuizzesUsuario);
+  localStorage.setItem('ids', idsSerializados);
   finalizaQuizz();
 }
 
