@@ -12,6 +12,7 @@ let qntPergunta;
 let qntNivel;
 let pergunta;
 let objetoDoPost;
+// let porcentagemDosNiveis = []
 
 
 function criarQuizz() {
@@ -175,17 +176,23 @@ function criarNiveis() {
           image: imagemIncorreta1,
           isCorrectAnswer: false
         },
+      ]
+    }
+    if (respostaIncorreta2 !== '' && respostaIncorreta2 !== undefined && respostaIncorreta2 !== null) {
+      pergContinuacao.answers.push(
         {
           text: respostaIncorreta2,
           image: imagemIncorreta2,
           isCorrectAnswer: false
-        },
+        })
+    }
+    if (respostaIncorreta3 !== '' && respostaIncorreta3 !== undefined && respostaIncorreta3 !== null) {
+      pergContinuacao.answers.push(
         {
           text: respostaIncorreta3,
           image: imagemIncorreta3,
           isCorrectAnswer: false
-        }
-      ]
+        })
     }
     pergunta.questions = [...pergunta.questions, pergContinuacao]
     console.log('pergunta.questions aqui::', pergunta.questions)
@@ -220,6 +227,7 @@ function renderizarNiveisQuizz() {
 function finalizarQuizz() {
   const containerNivel = document.querySelectorAll('.nivel');
 
+  let porcentagemDosNiveis = []
 
   for (i = 0; i < containerNivel.length; i++) {
 
@@ -227,13 +235,15 @@ function finalizarQuizz() {
     let imagemDoNivel = containerNivel[i].querySelector('.imagemNivel1').value;
     let descricaoDoNivel = containerNivel[i].querySelector('.descricaoNivel1').value;
     let porcentagemDoNivel = containerNivel[i].querySelector('.porcentagNivel1').value;
+    
+    porcentagemDosNiveis.push(porcentagemDoNivel)
 
     if (tituloDoNivel.length < 10) {
       alert("Título precisa ter no mín 10 caracteres");
       return;
     }
-    if (porcentagemDoNivel < 0 || porcentagemDoNivel > 100) {
-      alert("% é um número entr 0 e 100");
+    if (porcentagemDoNivel < 0 || porcentagemDoNivel > 100 || porcentagemDoNivel == '') {
+      alert("% é um número entre 0 e 100");
       return;
     }
     if (validacaoURL(imagemDoNivel) === false) {
@@ -244,13 +254,18 @@ function finalizarQuizz() {
       alert("A descrição precisa de no mínimo 30 caracteres");
       return;
     }
+    if (!porcentagemDosNiveis.includes("0")) {
+      // porcentagemDosNiveis = []
+      alert("É obrigatório existir pelo menos 1 nível cuja % de acerto mínima seja 0%")
+      return;
+    }
 
 
     let levelsData = {
       title: tituloDoNivel,
       image: imagemDoNivel,
       text: descricaoDoNivel,
-      minValue: porcentagemDoNivel,
+      minValue: Number(porcentagemDoNivel),
     };
 
     pergunta.levels = [...pergunta.levels, levelsData]
@@ -273,6 +288,7 @@ function postCriarQuizz() {
 
 function sucessoAoPostarQuizz(respostaSucessoAoPostarQuizz) {
   console.log('respostaSucessoAoPostarQuizz aqui:', respostaSucessoAoPostarQuizz)
+  
   finalizaQuizz();
 }
 
