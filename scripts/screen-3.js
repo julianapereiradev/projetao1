@@ -11,7 +11,7 @@ let qntPergunta;
 let qntNivel;
 let pergunta;
 let objetoDoPost;
-let tituloDaPergunta; 
+let tituloDaPergunta;
 let colorDaPergunta; let respostaCerta; let imagemDaRespostaCerta;
 let respostaIncorreta1; let imagemIncorreta1; let respostaIncorreta2; let imagemIncorreta2; let respostaIncorreta3; let imagemIncorreta3;
 let tituloDoNivel; let imagemDoNivel; let descricaoDoNivel; let porcentagemDoNivel;
@@ -339,12 +339,17 @@ function acessarOQuizTela2() {
   alert("Clicou para acessar o quizz");
 }
 function voltarInicioTela1() {
-    const t1 = document.querySelector('.corpo-t1');
-    const t3 = document.querySelector('.ultimaTela-t3');
-    t1.classList.remove('escondido');
-    t3.classList.add('escondido');
-    tituloDoQuizz = ''; 
-          imagemDoQuizz = ''; 
-          qtdePerguntas = ''; 
-          qtdeNiveis = '';  
+  limpaCampos();
+  const t1 = document.querySelector('.corpo-t1');
+  const t3 = document.querySelector('.ultimaTela-t3');
+  t1.classList.remove('escondido');
+  t3.classList.add('escondido');
+  tituloDoQuizz = '';
+  imagemDoQuizz = '';
+  qtdePerguntas = '';
+  qtdeNiveis = '';
+}
+
+function limpaCampos() {
+  document.querySelectorAll('input').forEach(campo => campo.value = "");
 }
