@@ -11,17 +11,13 @@ let qntPergunta;
 let qntNivel;
 let pergunta;
 let objetoDoPost;
-let idsQuizzesUsuario = [];
+let tituloDaPergunta; 
+let colorDaPergunta; let respostaCerta; let imagemDaRespostaCerta;
+let respostaIncorreta1; let imagemIncorreta1; let respostaIncorreta2; let imagemIncorreta2; let respostaIncorreta3; let imagemIncorreta3;
+let tituloDoNivel; let imagemDoNivel; let descricaoDoNivel; let porcentagemDoNivel;
+const idsQuizzesUsuario = [];
 // let porcentagemDosNiveis = []
 
-function criarQuizz() {
-
-  let criaQuizz = document.querySelector('.telaZeroHome-t3');
-  criaQuizz.classList.add('escondido-t3');
-
-  let primeiraTela = document.querySelector('.primeiraTela-t3');
-  primeiraTela.classList.remove('escondido-t3');
-}
 
 function criarPerguntas() {
   tituloDoQuizz = document.querySelector('.tituloDoQuizz-t3').value;
@@ -50,11 +46,10 @@ function criarPerguntas() {
           qntNivel = qtdeNiveis;
 
           // fim validacao da primeira tela
-          let criaPerguntas = document.querySelector('.primeiraTela-t3');
-          criaPerguntas.classList.add('escondido-t3');
-
+          const criaPerguntas = document.querySelector('.primeiraTela-t3');
+          criaPerguntas.classList.add('escondido');
           const segundaTela = document.querySelector('.segundaTela-t3');
-          segundaTela.classList.remove('escondido-t3');
+          segundaTela.classList.remove('escondido');
 
           renderizarPerguntasQuizz();
         }
@@ -125,16 +120,16 @@ function criarNiveis() {
 
   for (i = 0; i < containerPergunta.length; i++) {
 
-    let tituloDaPergunta = containerPergunta[i].querySelector('.tituloPergunta1').value;
-    let colorDaPergunta = containerPergunta[i].querySelector('.corDaPergunta').value;
-    let respostaCerta = containerPergunta[i].querySelector('.respostaCorretaTexto').value;
-    let imagemDaRespostaCerta = containerPergunta[i].querySelector('.respostaCorretaImg').value;
-    let respostaIncorreta1 = containerPergunta[i].querySelector('.respostaIncorreta1').value;
-    let imagemIncorreta1 = containerPergunta[i].querySelector('.imagemIncorreta1').value;
-    let respostaIncorreta2 = containerPergunta[i].querySelector('.respostaIncorreta2').value;
-    let imagemIncorreta2 = containerPergunta[i].querySelector('.imagemIncorreta2').value;
-    let respostaIncorreta3 = containerPergunta[i].querySelector('.respostaIncorreta3').value;
-    let imagemIncorreta3 = containerPergunta[i].querySelector('.imagemIncorreta3').value;
+    tituloDaPergunta = containerPergunta[i].querySelector('.tituloPergunta1').value;
+    colorDaPergunta = containerPergunta[i].querySelector('.corDaPergunta').value;
+    respostaCerta = containerPergunta[i].querySelector('.respostaCorretaTexto').value;
+    imagemDaRespostaCerta = containerPergunta[i].querySelector('.respostaCorretaImg').value;
+    respostaIncorreta1 = containerPergunta[i].querySelector('.respostaIncorreta1').value;
+    imagemIncorreta1 = containerPergunta[i].querySelector('.imagemIncorreta1').value;
+    respostaIncorreta2 = containerPergunta[i].querySelector('.respostaIncorreta2').value;
+    imagemIncorreta2 = containerPergunta[i].querySelector('.imagemIncorreta2').value;
+    respostaIncorreta3 = containerPergunta[i].querySelector('.respostaIncorreta3').value;
+    imagemIncorreta3 = containerPergunta[i].querySelector('.imagemIncorreta3').value;
 
     if (tituloDaPergunta.length < 20) {
       alert("Título contém entre 20 à 65 caracteres");
@@ -203,9 +198,18 @@ function renderizarNiveisQuizz() {
 
   const segundaTela = document.querySelector('.segundaTela-t3');
   const niveis = document.querySelector('.box-niveis-t3');
-
-  segundaTela.classList.add('escondido-t3');
-  niveis.classList.remove('escondido-t3');
+  tituloDaPergunta = '';
+  colorDaPergunta = '';
+  respostaCerta = '';
+  imagemDaRespostaCerta = '';
+  respostaIncorreta1 = '';
+  imagemIncorreta1 = '';
+  respostaIncorreta2 = '';
+  imagemIncorreta2 = '';
+  respostaIncorreta3 = '';
+  imagemIncorreta3 = '';
+  segundaTela.classList.add('escondido');
+  niveis.classList.remove('escondido');
 
   const renderizaNiveis = document.querySelector('.renderizaNiveis');
 
@@ -230,10 +234,10 @@ function finalizarQuizz() {
 
   for (i = 0; i < containerNivel.length; i++) {
 
-    let tituloDoNivel = containerNivel[i].querySelector('.tituloNivel1').value;
-    let imagemDoNivel = containerNivel[i].querySelector('.imagemNivel1').value;
-    let descricaoDoNivel = containerNivel[i].querySelector('.descricaoNivel1').value;
-    let porcentagemDoNivel = containerNivel[i].querySelector('.porcentagNivel1').value;
+    tituloDoNivel = containerNivel[i].querySelector('.tituloNivel1').value;
+    imagemDoNivel = containerNivel[i].querySelector('.imagemNivel1').value;
+    descricaoDoNivel = containerNivel[i].querySelector('.descricaoNivel1').value;
+    porcentagemDoNivel = containerNivel[i].querySelector('.porcentagNivel1').value;
 
     porcentagemDosNiveis.push(porcentagemDoNivel);
 
@@ -280,6 +284,11 @@ function postCriarQuizz() {
   objetoDoPost = pergunta;
   console.log('objetoDoPost::', objetoDoPost);
 
+  tituloDoNivel = '';
+  imagemDoNivel = '';
+  descricaoDoNivel = '';
+  porcentagemDoNivel = '';
+
   let promisse = axios.post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", objetoDoPost);
   promisse.then(sucessoAoPostarQuizz);
   promisse.catch(erroAoPostarQuizz);
@@ -288,7 +297,7 @@ function postCriarQuizz() {
 function sucessoAoPostarQuizz(respostaSucessoAoPostarQuizz) {
   console.log('respostaSucessoAoPostarQuizz aqui:', respostaSucessoAoPostarQuizz);
   idsQuizzesUsuario.push(respostaSucessoAoPostarQuizz.data.id);
-  let idsSerializados = JSON.stringify(idsQuizzesUsuario);
+  const idsSerializados = JSON.stringify(idsQuizzesUsuario);
   localStorage.setItem('ids', idsSerializados);
   finalizaQuizz();
 }
@@ -299,13 +308,13 @@ function erroAoPostarQuizz(respostaErroAoPostarQuizz) {
 
 function finalizaQuizz() {
   let criaNiveis = document.querySelector('.segundaTela-t3');
-  criaNiveis.classList.add('escondido-t3');
+  criaNiveis.classList.add('escondido');
 
   let esconderTelaNiveis = document.querySelector('.box-niveis-t3');
-  esconderTelaNiveis.classList.add('escondido-t3');
+  esconderTelaNiveis.classList.add('escondido');
 
   let aparecerUltimaTela = document.querySelector('.ultimaTela-t3');
-  aparecerUltimaTela.classList.remove('escondido-t3');
+  aparecerUltimaTela.classList.remove('escondido');
 
   let imgQuizzDoInicio = objetoDoPost.image;
   let titleQuizDoInicio = objetoDoPost.title;
@@ -330,5 +339,12 @@ function acessarOQuizTela2() {
   alert("Clicou para acessar o quizz");
 }
 function voltarInicioTela1() {
-  alert("Clicou para voltar ao inicio");
+    const t1 = document.querySelector('.corpo-t1');
+    const t3 = document.querySelector('.ultimaTela-t3');
+    t1.classList.remove('escondido');
+    t3.classList.add('escondido');
+    tituloDoQuizz = ''; 
+          imagemDoQuizz = ''; 
+          qtdePerguntas = ''; 
+          qtdeNiveis = '';  
 }

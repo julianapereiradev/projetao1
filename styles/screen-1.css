@@ -45,7 +45,7 @@ body {
     margin-bottom: 77px;
 }
 
-.usuario-sem-quiz-t1 button {
+.usuario-sem-quiz-t1 a {
     width: 151px;
     height: 40px;
     background: #FAFAFA;
@@ -57,9 +57,10 @@ body {
     font-size: 21px;
     margin-top: 20px;
     transition: all 0.5s;
+    text-decoration: none;
 }
 
-.usuario-sem-quiz-t1 button:hover {
+.usuario-sem-quiz-t1 a:hover {
     background-color: #EC362D;
     color: #FAFAFA;
 }
@@ -140,7 +141,7 @@ body {
     margin-bottom: 10px;
 }
 
-.header-quiz-usuario-t1 button {
+.header-quiz-usuario-t1 a {
     width: 31px;
     height: 30px;
     color: #FFFFFF;
@@ -150,6 +151,7 @@ body {
     border-radius: 500px;
     border: none;
     margin-left: 17px;
+    text-decoration: none;
 }
 
 .caixa-quiz-usuario-t1 {
