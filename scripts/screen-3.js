@@ -2,7 +2,7 @@ axios.defaults.headers.common['Authorization'] = 'ylQIQq1xH2RbNTiDYd7ky2cm';
 
 let urlBase = 'https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes';
 let tituloDoQuizz;
-let imagemDoQuizz
+let imagemDoQuizz;
 let qtdePerguntas;
 let qtdeNiveis;
 let tituloNovo;
@@ -25,7 +25,7 @@ function criarQuizz() {
 
 function criarPerguntas() {
   tituloDoQuizz = document.querySelector('.tituloDoQuizz-t3').value;
-  imagemDoQuizz = document.querySelector('.imagemDoQUizz-t3').value
+  imagemDoQuizz = document.querySelector('.imagemDoQUizz-t3').value;
   qtdePerguntas = document.querySelector('.qtdePerguntas-t3').value;
   qtdeNiveis = document.querySelector('.qtdeNiveis-t3').value;
 
@@ -39,7 +39,7 @@ function criarPerguntas() {
     if (validacaoURL(imagemDoQuizz) === false) {
       alert('deve ter formato de URL');
     } else {
-      imagemNova = imagemDoQuizz
+      imagemNova = imagemDoQuizz;
       if (qtdePerguntas < 3) {
         alert('Você precisa ter pelo menos 3 perguntas');
       } else {
@@ -56,7 +56,7 @@ function criarPerguntas() {
           const segundaTela = document.querySelector('.segundaTela-t3');
           segundaTela.classList.remove('escondido-t3');
 
-          renderizarPerguntasQuizz()
+          renderizarPerguntasQuizz();
         }
       }
     }
@@ -89,25 +89,25 @@ function renderizarPerguntasQuizz() {
     <div class="container-pergunta">
     <div class="textoECorPergunta">
       <p>Pergunta ${i + 1}</p>
-      <input class ="tituloPergunta1" type="text" placeholder="Texto da pergunta">
-      <input class="corDaPergunta" type="text" placeholder="Cor de fundo da pergunta">
+      <input class ="tituloPergunta1" type="text" placeholder="Texto da pergunta" name="Título das Perguntas">
+      <input class="corDaPergunta" type="text" placeholder="Cor de fundo da pergunta" name="Cor da Perguntas">
     </div>
     <div class="respostaCorreta">
       <p>Resposta Correta</p>
-      <input class="respostaCorretaTexto" type="text" placeholder="Resposta correta">
-      <input class="respostaCorretaImg" type="text" placeholder="URL da imagem">
+      <input class="respostaCorretaTexto" type="text" placeholder="Resposta correta" name="Respostas Corretas">
+      <input class="respostaCorretaImg" type="text" placeholder="URL da imagem" name="Imagens">
     </div>
     <div class="respostasIncorretas">
       <p>Respostas Incorretas</p>
-      <input class="respostaIncorreta1" type="text" placeholder="Resposta incorreta 1">
-      <input class="imagemIncorreta1" type="text" placeholder="URL da imagem 1">
-      <input class="respostaIncorreta2 marginTop" type="text" placeholder="Resposta incorreta 2">
-      <input class="imagemIncorreta2" type="text" placeholder="URL da imagem 2">
-      <input class="respostaIncorreta3 marginTop" type="text" placeholder="Resposta incorreta 3">
-      <input class="imagemIncorreta3" type="text" placeholder="URL da imagem 3">
+      <input class="respostaIncorreta1" type="text" placeholder="Resposta incorreta 1" name="Respostas Incorretas">
+      <input class="imagemIncorreta1" type="text" placeholder="URL da imagem 1" name="Imagens">
+      <input class="respostaIncorreta2 marginTop" type="text" placeholder="Resposta incorreta 2" name="Respostas Incorretas">
+      <input class="imagemIncorreta2" type="text" placeholder="URL da imagem 2" name="Imagens">
+      <input class="respostaIncorreta3 marginTop" type="text" placeholder="Resposta incorreta 3" name="Respostas Incorretas">
+      <input class="imagemIncorreta3" type="text" placeholder="URL da imagem 3" name="Imagens">
     </div>
   </div>
-    `
+    `;
   }
 
 }
@@ -120,7 +120,7 @@ function criarNiveis() {
     image: imagemDoQuizz,
     questions: [],
     levels: []
-  }
+  };
 
 
   for (i = 0; i < containerPergunta.length; i++) {
@@ -176,14 +176,14 @@ function criarNiveis() {
           isCorrectAnswer: false
         },
       ]
-    }
+    };
     if (respostaIncorreta2 !== '' && respostaIncorreta2 !== undefined && respostaIncorreta2 !== null) {
       pergContinuacao.answers.push(
         {
           text: respostaIncorreta2,
           image: imagemIncorreta2,
           isCorrectAnswer: false
-        })
+        });
     }
     if (respostaIncorreta3 !== '' && respostaIncorreta3 !== undefined && respostaIncorreta3 !== null) {
       pergContinuacao.answers.push(
@@ -191,10 +191,10 @@ function criarNiveis() {
           text: respostaIncorreta3,
           image: imagemIncorreta3,
           isCorrectAnswer: false
-        })
+        });
     }
-    pergunta.questions = [...pergunta.questions, pergContinuacao]
-    console.log('pergunta.questions aqui::', pergunta.questions)
+    pergunta.questions = [...pergunta.questions, pergContinuacao];
+    console.log('pergunta.questions aqui::', pergunta.questions);
   }
   renderizarNiveisQuizz();
 }
@@ -213,10 +213,10 @@ function renderizarNiveisQuizz() {
     renderizaNiveis.innerHTML += `
     <div class="nivel container-niveis">
     <p>Nível ${i + 1}</p>
-    <input class="tituloNivel1" type="text" placeholder="Título do nível">
-    <input class="porcentagNivel1" type="text" placeholder="% de acerto mínima">
-    <input class="imagemNivel1" type="text" placeholder="URL da imagem do nível">
-    <input class="descricaoNivel1" type="text" placeholder="Descrição do nível">
+    <input class="tituloNivel1" type="text" placeholder="Título do nível" name="Nivel Titulo">
+    <input class="porcentagNivel1" type="text" placeholder="% de acerto mínima" name="Nivel Valor">
+    <input class="imagemNivel1" type="text" placeholder="URL da imagem do nível" name="Imagens">
+    <input class="descricaoNivel1" type="text" placeholder="Descrição do nível" name="Nivel Texto">
   </div>
     `;
   }
@@ -226,7 +226,7 @@ function renderizarNiveisQuizz() {
 function finalizarQuizz() {
   const containerNivel = document.querySelectorAll('.nivel');
 
-  let porcentagemDosNiveis = []
+  let porcentagemDosNiveis = [];
 
   for (i = 0; i < containerNivel.length; i++) {
 
@@ -234,8 +234,8 @@ function finalizarQuizz() {
     let imagemDoNivel = containerNivel[i].querySelector('.imagemNivel1').value;
     let descricaoDoNivel = containerNivel[i].querySelector('.descricaoNivel1').value;
     let porcentagemDoNivel = containerNivel[i].querySelector('.porcentagNivel1').value;
-    
-    porcentagemDosNiveis.push(porcentagemDoNivel)
+
+    porcentagemDosNiveis.push(porcentagemDoNivel);
 
     if (tituloDoNivel.length < 10) {
       alert("Título precisa ter no mín 10 caracteres");
@@ -255,7 +255,7 @@ function finalizarQuizz() {
     }
     if (!porcentagemDosNiveis.includes("0")) {
       // porcentagemDosNiveis = []
-      alert("É obrigatório existir pelo menos 1 nível cuja % de acerto mínima seja 0%")
+      alert("É obrigatório existir pelo menos 1 nível cuja % de acerto mínima seja 0%");
       return;
     }
 
@@ -267,10 +267,10 @@ function finalizarQuizz() {
       minValue: Number(porcentagemDoNivel),
     };
 
-    pergunta.levels = [...pergunta.levels, levelsData]
+    pergunta.levels = [...pergunta.levels, levelsData];
   }
-  console.log('pergunta.levels', pergunta.levels)
-  console.log('como ta pergunta agora dps que cliquei em finalizar levels', pergunta)
+  console.log('pergunta.levels', pergunta.levels);
+  console.log('como ta pergunta agora dps que cliquei em finalizar levels', pergunta);
   postCriarQuizz();
 }
 
@@ -278,15 +278,15 @@ function finalizarQuizz() {
 
 function postCriarQuizz() {
   objetoDoPost = pergunta;
-  console.log('objetoDoPost::', objetoDoPost)
+  console.log('objetoDoPost::', objetoDoPost);
 
   let promisse = axios.post("https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes", objetoDoPost);
-  promisse.then(sucessoAoPostarQuizz)
-  promisse.catch(erroAoPostarQuizz)
+  promisse.then(sucessoAoPostarQuizz);
+  promisse.catch(erroAoPostarQuizz);
 }
 
 function sucessoAoPostarQuizz(respostaSucessoAoPostarQuizz) {
-  console.log('respostaSucessoAoPostarQuizz aqui:', respostaSucessoAoPostarQuizz)
+  console.log('respostaSucessoAoPostarQuizz aqui:', respostaSucessoAoPostarQuizz);
   idsQuizzesUsuario.push(respostaSucessoAoPostarQuizz.data.id);
   let idsSerializados = JSON.stringify(idsQuizzesUsuario);
   localStorage.setItem('ids', idsSerializados);
@@ -294,7 +294,7 @@ function sucessoAoPostarQuizz(respostaSucessoAoPostarQuizz) {
 }
 
 function erroAoPostarQuizz(respostaErroAoPostarQuizz) {
-  console.log('respostaErroAoPostarQuizz aqui:', respostaErroAoPostarQuizz)
+  console.log('respostaErroAoPostarQuizz aqui:', respostaErroAoPostarQuizz);
 }
 
 function finalizaQuizz() {
@@ -309,7 +309,7 @@ function finalizaQuizz() {
 
   let imgQuizzDoInicio = objetoDoPost.image;
   let titleQuizDoInicio = objetoDoPost.title;
-  console.log('imgQuizzDoInicio do final:', imgQuizzDoInicio)
+  console.log('imgQuizzDoInicio do final:', imgQuizzDoInicio);
 
   renderizaUltimaTela(imgQuizzDoInicio, titleQuizDoInicio);
 }
@@ -323,12 +323,12 @@ function renderizaUltimaTela(imgQuizzDoInicio, titleQuizDoInicio) {
   <p>${titleQuizDoInicio}</p>
   <div class="degradeQuizzFinal">
   </div>
-  `
+  `;
 }
 
 function acessarOQuizTela2() {
-  alert("Clicou para acessar o quizz")
+  alert("Clicou para acessar o quizz");
 }
 function voltarInicioTela1() {
-  alert("Clicou para voltar ao inicio")
+  alert("Clicou para voltar ao inicio");
 }

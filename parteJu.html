@@ -30,33 +30,37 @@
             <div class="p-main-t3">
                 <p>Comece pelo começo</p>
             </div>
-            <div class="box-main-t3">
-                <input class="tituloDoQuizz-t3" type="text" placeholder="Título do seu quizz">
-                <input class="imagemDoQUizz-t3" type="url" placeholder="URL da imagem do seu quizz">
-                <input class="qtdePerguntas-t3" type="number" placeholder="Quantidade de perguntas do quizz">
-                <input class="qtdeNiveis-t3" type="number" placeholder="Quantidade de níveis do quizz">
-            </div>
-            <button class="buttonCriarPerguntas" onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
+            <form onsubmit="event.preventDefault()">
+                <div class="box-main-t3">
+                    <input class="tituloDoQuizz-t3" type="text" placeholder="Título do seu quizz" name="Quizz" required>
+                    <input class="imagemDoQUizz-t3" type="url" placeholder="URL da imagem do seu quizz" name="Imagens" required>
+                    <input class="qtdePerguntas-t3" type="number" placeholder="Quantidade de perguntas do quizz">
+                    <input class="qtdeNiveis-t3" type="number" placeholder="Quantidade de níveis do quizz">
+                </div>
+                <button class="buttonCriarPerguntas" onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
+            </form>
         </div>
     </div>
 
     <div class="segundaTela-t3 escondido-t3">
         <div class="div-Flex-t3">
-            <div class="box-perguntas-t3">
+            <form class="box-perguntas-t3" onsubmit="event.preventDefault()">
                 <div class="main-perguntas-t3">
                     <p>Crie suas perguntas</p>
                     <div class="renderizaPerguntas"></div>
                 </div>
                 <button class="buttonCriarNiveis" onclick="criarNiveis()">Prosseguir para níveis</button>
-            </div>
+            </form>
         </div>
     </div>
 
     <div class="box-niveis-t3 escondido-t3">
         <div class="main-niveis-t3">
             <p>Agora, decida os níveis</p>
-            <div class="renderizaNiveis"></div>
-            <button class="buttonFinalizarQuizz" onclick="finalizarQuizz()">Finalizar Quizz</button>
+            <form onsubmit="event.preventDefault()">
+                <div class="renderizaNiveis"></div>
+                <button class="buttonFinalizarQuizz" onclick="finalizarQuizz()">Finalizar Quizz</button>
+            </form>
         </div>
     </div>
 
