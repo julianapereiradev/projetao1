@@ -29,7 +29,7 @@ const getQuizz = id => {
   axios.get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/' + id)
     .then(response => {
       let { questions, levels, ...data } = response.data;
-      levels = levels.map(({ minValue, ...level}) => [minValue, level]);
+      levels = levels.map(({ minValue, ...level }) => [minValue, level]);
       createBanner(data);
 
       questions.forEach(({ title, color, answers }, index) => {
@@ -111,7 +111,8 @@ const getQuizz = id => {
 const restartQuizz = () => {
   console.log('Por que alguém reiniciaria isso?');
   document.body.scrollIntoView();
-  quizz_content.removeChild(level)
+  level.innerHTML = '';
+  quizz_content.removeChild(level);
   document.querySelectorAll('.answer-t2').forEach(
     element => element.classList.remove('true', 'false', 'whitish-t2', 'pressed-t2'));
   buttons.classList.add('hidden-t2');
@@ -124,7 +125,8 @@ const backToHome = () => {
 
 };
 
-//getQuizz(2);
+
+// getQuizz(55);
 
 
 
