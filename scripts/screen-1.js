@@ -47,7 +47,7 @@ function renderizaQuizzes() {
     const layout = document.querySelector('.caixas-quizzes-t1');
     layout.innerHTML = '';
     todosQuizzes.forEach( function(render){
-        layout.innerHTML += `<div class="caixinha-quiz-t1">
+        layout.innerHTML += `<div data-test="others-quiz" class="caixinha-quiz-t1">
                                 <img src="${render.image}" alt="">
                                 <p>${render.title}</p>
                             </div>`
