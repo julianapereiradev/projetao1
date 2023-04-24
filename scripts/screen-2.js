@@ -44,6 +44,10 @@ const getQuizz = id => {
         question.classList.add('question-t2', `q${index}-t2`);
         question.appendChild(question_title);
 
+        question_content = document.createElement('div');
+        question_content.classList.add('question-content');
+        question.appendChild(question_content);
+
         answers.sort(() => Math.random() - 0.5).forEach(({ text, image, isCorrectAnswer }) => {
           const answer = document.createElement('div');
           answer.isCorrectAnswer = isCorrectAnswer;
@@ -94,7 +98,7 @@ const getQuizz = id => {
 
           answer.innerHTML = `<img src="${image}">`;
           answer.appendChild(answer_text);
-          question.appendChild(answer);
+          question_content.appendChild(answer);
         });
         quizz_content.appendChild(question);
       });
