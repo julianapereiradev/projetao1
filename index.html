@@ -76,12 +76,12 @@
             </div>
             <form onsubmit="event.preventDefault()">
                 <div class="box-main-t3">
-                    <input class="tituloDoQuizz-t3" type="text" placeholder="Título do seu quizz" name="Quizz" required>
-                    <input class="imagemDoQUizz-t3" type="url" placeholder="URL da imagem do seu quizz" name="Imagens" required>
-                    <input class="qtdePerguntas-t3" type="number" placeholder="Quantidade de perguntas do quizz">
-                    <input class="qtdeNiveis-t3" type="number" placeholder="Quantidade de níveis do quizz">
+                    <input data-test="title-input" class="tituloDoQuizz-t3" type="text" placeholder="Título do seu quizz" name="Quizz" required>
+                    <input data-test="img-input" class="imagemDoQUizz-t3" type="url" placeholder="URL da imagem do seu quizz" name="Imagens" required>
+                    <input data-test="questions-amount-input" class="qtdePerguntas-t3" type="number" placeholder="Quantidade de perguntas do quizz">
+                    <input data-test="levels-amount-input" class="qtdeNiveis-t3" type="number" placeholder="Quantidade de níveis do quizz">
                 </div>
-                <button class="buttonCriarPerguntas" onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
+                <button data-test="go-create-questions" class="buttonCriarPerguntas" onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
             </form>
         </div>
     </div>
@@ -93,7 +93,7 @@
                     <p>Crie suas perguntas</p>
                     <div class="renderizaPerguntas"></div>
                 </div>
-                <button class="buttonCriarNiveis" onclick="criarNiveis()">Prosseguir para níveis</button>
+                <button data-test="go-create-levels" class="buttonCriarNiveis" onclick="criarNiveis()">Prosseguir para níveis</button>
             </form>
         </div>
     </div>
@@ -103,7 +103,7 @@
             <p>Agora, decida os níveis</p>
             <form onsubmit="event.preventDefault()">
                 <div class="renderizaNiveis"></div>
-                <button class="buttonFinalizarQuizz" onclick="finalizarQuizz()">Finalizar Quizz</button>
+                <button data-test="finish" class="buttonFinalizarQuizz" onclick="finalizarQuizz()">Finalizar Quizz</button>
             </form>
         </div>
     </div>
@@ -112,8 +112,8 @@
         <div class="box-final-t3">
             <h3>Seu Quizz está pronto!</h3>
             <div class="renderizaImgQuizz"></div>
-            <button class="acessarQuizz" onclick="acessarOQuizTela2()">Acessar Quizz</button>
-            <button class="buttonHome voltar" onclick="voltarInicioTela1()">Voltar para Home</button>
+            <button data-test="go-quiz" class="acessarQuizz" onclick="acessarOQuizTela2()">Acessar Quizz</button>
+            <button data-test="go-home" class="buttonHome voltar" onclick="voltarInicioTela1()">Voltar para Home</button>
         </div>
     </div>
     <!-- Fim da Tela 3-->

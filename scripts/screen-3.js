@@ -81,25 +81,25 @@ function renderizarPerguntasQuizz() {
 
   for (let i = 0; i < qntPergunta; i++) {
     renderizaPerguntas.innerHTML += `
-    <div class="container-pergunta">
+    <div data-test="question-ctn" class="container-pergunta">
     <div class="textoECorPergunta">
       <p>Pergunta ${i + 1}</p>
-      <input class ="tituloPergunta1" type="text" placeholder="Texto da pergunta" name="Título das Perguntas">
-      <input class="corDaPergunta" type="text" placeholder="Cor de fundo da pergunta" name="Cor da Perguntas">
+      <input data-test="question-input" class ="tituloPergunta1" type="text" placeholder="Texto da pergunta" name="Título das Perguntas">
+      <input data-test="question-color-input" class="corDaPergunta" type="text" placeholder="Cor de fundo da pergunta" name="Cor da Perguntas">
     </div>
     <div class="respostaCorreta">
       <p>Resposta Correta</p>
-      <input class="respostaCorretaTexto" type="text" placeholder="Resposta correta" name="Respostas Corretas">
-      <input class="respostaCorretaImg" type="text" placeholder="URL da imagem" name="Imagens">
+      <input data-test="correct-answer-input" class="respostaCorretaTexto" type="text" placeholder="Resposta correta" name="Respostas Corretas">
+      <input data-test="correct-img-input" class="respostaCorretaImg" type="text" placeholder="URL da imagem" name="Imagens">
     </div>
     <div class="respostasIncorretas">
       <p>Respostas Incorretas</p>
-      <input class="respostaIncorreta1" type="text" placeholder="Resposta incorreta 1" name="Respostas Incorretas">
-      <input class="imagemIncorreta1" type="text" placeholder="URL da imagem 1" name="Imagens">
-      <input class="respostaIncorreta2 marginTop" type="text" placeholder="Resposta incorreta 2" name="Respostas Incorretas">
-      <input class="imagemIncorreta2" type="text" placeholder="URL da imagem 2" name="Imagens">
-      <input class="respostaIncorreta3 marginTop" type="text" placeholder="Resposta incorreta 3" name="Respostas Incorretas">
-      <input class="imagemIncorreta3" type="text" placeholder="URL da imagem 3" name="Imagens">
+      <input data-test="wrong-answer-input" class="respostaIncorreta1" type="text" placeholder="Resposta incorreta 1" name="Respostas Incorretas">
+      <input data-test="wrong-img-input" class="imagemIncorreta1" type="text" placeholder="URL da imagem 1" name="Imagens">
+      <input data-test="wrong-answer-input" class="respostaIncorreta2 marginTop" type="text" placeholder="Resposta incorreta 2" name="Respostas Incorretas">
+      <input data-test="wrong-img-input" class="imagemIncorreta2" type="text" placeholder="URL da imagem 2" name="Imagens">
+      <input data-test="wrong-answer-input" class="respostaIncorreta3 marginTop" type="text" placeholder="Resposta incorreta 3" name="Respostas Incorretas">
+      <input data-test="wrong-img-input" class="imagemIncorreta3" type="text" placeholder="URL da imagem 3" name="Imagens">
     </div>
   </div>
     `;
@@ -230,12 +230,12 @@ function renderizarNiveisQuizz() {
 
   for (let i = 0; i < qntNivel; i++) {
     renderizaNiveis.innerHTML += `
-    <div class="nivel container-niveis">
+    <div data-test="level-ctn" class="nivel container-niveis">
     <p>Nível ${i + 1}</p>
-    <input class="tituloNivel1" type="text" placeholder="Título do nível" name="Nivel Titulo">
-    <input class="porcentagNivel1" type="text" placeholder="% de acerto mínima" name="Nivel Valor">
-    <input class="imagemNivel1" type="text" placeholder="URL da imagem do nível" name="Imagens">
-    <input class="descricaoNivel1" type="text" placeholder="Descrição do nível" name="Nivel Texto">
+    <input data-test="level-input" class="tituloNivel1" type="text" placeholder="Título do nível" name="Nivel Titulo">
+    <input data-test="level-percent-input" class="porcentagNivel1" type="text" placeholder="% de acerto mínima" name="Nivel Valor">
+    <input data-test="level-img-input" class="imagemNivel1" type="text" placeholder="URL da imagem do nível" name="Imagens">
+    <input data-test="level-description-input" class="descricaoNivel1" type="text" placeholder="Descrição do nível" name="Nivel Texto">
   </div>
     `;
   }
@@ -342,7 +342,7 @@ function renderizaUltimaTela(imgQuizzDoInicio, titleQuizDoInicio) {
   const renderizaImagemQuiz = document.querySelector('.renderizaImgQuizz');
 
   renderizaImagemQuiz.innerHTML += `
-  <div>
+  <div data-test="success-banner">
   <img class="imgQuizzDoInicio" src="${imgQuizzDoInicio}">
   <p>${titleQuizDoInicio}</p>
   <div class="degradeQuizzFinal">
