@@ -64,7 +64,7 @@ const getQuizz = id => {
                 let precision = Math.round((100 * correct.length / questions.length));
 
                 const { title, image, text } = getLevel(precision, levels);
-                console.log(title, image, text)
+                console.log(title, image, text);
 
                 const level_title = document.createElement('h3');
                 level_title.setAttribute('data-test', 'level-title');
@@ -120,6 +120,11 @@ const restartQuizz = () => {
 };
 
 const backToHome = () => {
+  quizz_content.innerHTML = '';
+  buttons.classList.add('hidden-t2');
+  level.innerHTML = '';
+  /* const t1 = document.querySelector('.corpo-t1');
+  t1.classList.remove('escondido'); */
   console.log('Feche logo a página, ao inves de volta por home');
   quizz.classList.add('hidden-t2');
   console.log(document.querySelectorAll('.answer-t2'));
