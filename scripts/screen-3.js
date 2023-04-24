@@ -1,6 +1,5 @@
 axios.defaults.headers.common['Authorization'] = 'ylQIQq1xH2RbNTiDYd7ky2cm';
 
-let urlBase = 'https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes';
 let tituloDoQuizz;
 let imagemDoQuizz;
 let qtdePerguntas;
@@ -16,7 +15,6 @@ let colorDaPergunta; let respostaCerta; let imagemDaRespostaCerta;
 let respostaIncorreta1; let imagemIncorreta1; let respostaIncorreta2; let imagemIncorreta2; let respostaIncorreta3; let imagemIncorreta3;
 let tituloDoNivel; let imagemDoNivel; let descricaoDoNivel; let porcentagemDoNivel;
 const idsQuizzesUsuario = [];
-// let porcentagemDosNiveis = []
 
 
 function criarPerguntas() {
@@ -26,7 +24,6 @@ function criarPerguntas() {
   qtdeNiveis = document.querySelector('.qtdeNiveis-t3').value;
 
 
-  // validacao da primeira tela
   if (tituloDoQuizz.length < 20 || tituloDoQuizz.length > 65) {
     alert("O título deve ter entre 20 a 65 letras");
   }
@@ -45,7 +42,6 @@ function criarPerguntas() {
         } else {
           qntNivel = qtdeNiveis;
 
-          // fim validacao da primeira tela
           const criaPerguntas = document.querySelector('.primeiraTela-t3');
           criaPerguntas.classList.add('escondido');
           const segundaTela = document.querySelector('.segundaTela-t3');
@@ -66,12 +62,12 @@ function validacaoURL(str) {
     '(\\?[;&a-z\\d%_.~+=-]*)?' +
     '(\\#[-a-z\\d_]*)?$', 'i');
   return !!pattern.test(str);
-} //ver depois
+}
 
-function validaCor(str) {
+function validacaoDaCor(str) {
   let pattern = new RegExp("^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$");
   return !!pattern.test(str);
-} //ver depois
+}
 
 
 function renderizarPerguntasQuizz() {
@@ -144,7 +140,7 @@ function criarNiveis() {
       alert("Título contém entre 20 à 65 caracteres");
       return;
     }
-    if (validaCor(colorDaPergunta) === false) {
+    if (validacaoDaCor(colorDaPergunta) === false) {
       alert("Colocar formato correto da cor");
       return;
     }
@@ -283,7 +279,6 @@ function finalizarQuizz() {
       return;
     }
     if (!porcentagemDosNiveis.includes("0")) {
-      // porcentagemDosNiveis = []
       alert("É obrigatório existir pelo menos 1 nível cuja % de acerto mínima seja 0%");
       return;
     }
@@ -303,7 +298,6 @@ function finalizarQuizz() {
   postCriarQuizz();
 }
 
-//
 
 function postCriarQuizz() {
   objetoDoPost = pergunta;
