@@ -110,15 +110,25 @@ body {
 .main-niveis-t3 {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 63px;
 }
+/* mudanca justify */
 
 .main-niveis-t3 img {
   margin-left: 550px;
   margin-top: -25px;
   padding-bottom: 100px;
 }
+
+.box-niveis-form-t3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* criado */
 
 .box-final-t3 {
   display: flex;

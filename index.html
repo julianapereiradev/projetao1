@@ -23,30 +23,34 @@
     <header class="header-t1">
         BuzzQuizz
     </header>
-    <div class="corpo-t1">    
-        <div class="usuario-sem-quiz-t1">
+<!-- class nova de div-body -->
+    <div class="div-body">
+        <div class="corpo-t1">
+            <div class="usuario-sem-quiz-t1">
                 <p>Você não criou nenhum<br>quizz ainda :(</p>
                 <button onclick="mudaTela3()">Criar Quizz</button>
-        </div>
-        <div class="usuario-com-quiz-t1 escondido">
-            <div class="header-quiz-usuario-t1">
-                <p>Seus Quizzes</p>
-                <button>+</button>
             </div>
-            <div class="caixa-quiz-usuario-t1">
-                <div class="caixinha-quiz-usuario-t1">
-                    <img src="./assets/depositphotos_184311644-stock-photo-white-background-template-for-copy.jpg" alt="">
-                    <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+            <div class="usuario-com-quiz-t1 escondido">
+                <div class="header-quiz-usuario-t1">
+                    <p>Seus Quizzes</p>
+                    <button>+</button>
                 </div>
-                <div class="caixinha-quiz-usuario-t1">
-                    <img src="./assets/fundo-simpsons.png" alt="">
-                    <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                <div class="caixa-quiz-usuario-t1">
+                    <div class="caixinha-quiz-usuario-t1">
+                        <img src="./assets/depositphotos_184311644-stock-photo-white-background-template-for-copy.jpg"
+                            alt="">
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </div>
+                    <div class="caixinha-quiz-usuario-t1">
+                        <img src="./assets/fundo-simpsons.png" alt="">
+                        <p>Acerte os personagens corretos dos Simpsons e prove seu amor!</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="todos-quizzes-t1">
-            <p>Todos os Quizzes</p>
-            <div class="caixas-quizzes-t1">
+            <div class="todos-quizzes-t1">
+                <p>Todos os Quizzes</p>
+                <div class="caixas-quizzes-t1">
+                </div>
             </div>
         </div>
     </div>
@@ -74,15 +78,20 @@
             <div class="p-main-t3">
                 <p>Comece pelo começo</p>
             </div>
-            <form onsubmit="event.preventDefault()">
-                <div class="box-main-t3">
-                    <input data-test="title-input" class="tituloDoQuizz-t3" type="text" placeholder="Título do seu quizz" name="Quizz" required>
-                    <input data-test="img-input" class="imagemDoQUizz-t3" type="url" placeholder="URL da imagem do seu quizz" name="Imagens" required>
-                    <input data-test="questions-amount-input" class="qtdePerguntas-t3" type="number" placeholder="Quantidade de perguntas do quizz">
-                    <input data-test="levels-amount-input" class="qtdeNiveis-t3" type="number" placeholder="Quantidade de níveis do quizz">
-                </div>
-                <button data-test="go-create-questions" class="buttonCriarPerguntas" onclick="criarPerguntas()">Prosseguir para criar perguntas</button>
-            </form>
+<!-- tirei o forms aqui -->
+            <div class="box-main-t3">
+                <input data-test="title-input" class="tituloDoQuizz-t3" type="text" placeholder="Título do seu quizz"
+                    name="Quizz" required>
+                <input data-test="img-input" class="imagemDoQUizz-t3" type="url"
+                    placeholder="URL da imagem do seu quizz" name="Imagens" required>
+                <input data-test="questions-amount-input" class="qtdePerguntas-t3" type="number"
+                    placeholder="Quantidade de perguntas do quizz">
+                <input data-test="levels-amount-input" class="qtdeNiveis-t3" type="number"
+                    placeholder="Quantidade de níveis do quizz">
+            </div>
+            <button data-test="go-create-questions" class="buttonCriarPerguntas" onclick="criarPerguntas()">Prosseguir
+                para criar perguntas</button>
+
         </div>
     </div>
 
@@ -93,17 +102,20 @@
                     <p>Crie suas perguntas</p>
                     <div class="renderizaPerguntas"></div>
                 </div>
-                <button data-test="go-create-levels" class="buttonCriarNiveis" onclick="criarNiveis()">Prosseguir para níveis</button>
+                <button data-test="go-create-levels" class="buttonCriarNiveis" onclick="criarNiveis()">Prosseguir para
+                    níveis</button>
             </form>
         </div>
     </div>
 
+    <!-- acrescentei a class box-niveis-form-t3-->
     <div class="box-niveis-t3 escondido">
         <div class="main-niveis-t3">
             <p>Agora, decida os níveis</p>
-            <form onsubmit="event.preventDefault()">
+            <form onsubmit="event.preventDefault()" class="box-niveis-form-t3">
                 <div class="renderizaNiveis"></div>
-                <button data-test="finish" class="buttonFinalizarQuizz" onclick="finalizarQuizz()">Finalizar Quizz</button>
+                <button data-test="finish" class="buttonFinalizarQuizz" onclick="finalizarQuizz()">Finalizar
+                    Quizz</button>
             </form>
         </div>
     </div>
@@ -113,7 +125,8 @@
             <h3>Seu Quizz está pronto!</h3>
             <div class="renderizaImgQuizz"></div>
             <button data-test="go-quiz" class="acessarQuizz" onclick="acessarOQuizTela2()">Acessar Quizz</button>
-            <button data-test="go-home" class="buttonHome voltar" onclick="voltarInicioTela1()">Voltar para Home</button>
+            <button data-test="go-home" class="buttonHome voltar" onclick="voltarInicioTela1()">Voltar para
+                Home</button>
         </div>
     </div>
     <!-- Fim da Tela 3-->
