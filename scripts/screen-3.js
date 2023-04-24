@@ -81,10 +81,14 @@ function renderizarPerguntasQuizz() {
 
   for (let i = 0; i < qntPergunta; i++) {
     renderizaPerguntas.innerHTML += `
-    <div data-test="question-ctn" class="container-pergunta">
+<div data-test="question-ctn" class="container-pergunta box-perguntas-t3">
+  <div class="pergunta-t3">
+    <p>Pergunta ${i + 1}</p>
+    <button data-test="toggle" onclick="alternar('.conteudo-pergunta-t3', ${i})"></button>
+  </div>
+  <div class="conteudo-pergunta-t3 escondido">
     <div class="textoECorPergunta">
-      <p>Pergunta ${i + 1}</p>
-      <input data-test="question-input" class ="tituloPergunta1" type="text" placeholder="Texto da pergunta" name="Título das Perguntas">
+      <input data-test="question-input" class="tituloPergunta1" type="text" placeholder="Texto da pergunta" name="Título das Perguntas">
       <input data-test="question-color-input" class="corDaPergunta" type="text" placeholder="Cor de fundo da pergunta" name="Cor da Perguntas">
     </div>
     <div class="respostaCorreta">
@@ -102,9 +106,9 @@ function renderizarPerguntasQuizz() {
       <input data-test="wrong-img-input" class="imagemIncorreta3" type="text" placeholder="URL da imagem 3" name="Imagens">
     </div>
   </div>
-    `;
+</div>`;
   }
-
+  alternar('.conteudo-pergunta-t3', 0);
 }
 
 function criarNiveis() {
@@ -117,8 +121,8 @@ function criarNiveis() {
     levels: []
   };
 
-  console.log('respostaIncorreta1 antes do for', respostaIncorreta1)
-  console.log('respostaIncorreta1 antes do for', imagemIncorreta1)
+  console.log('respostaIncorreta1 antes do for', respostaIncorreta1);
+  console.log('respostaIncorreta1 antes do for', imagemIncorreta1);
 
   for (let i = 0; i < containerPergunta.length; i++) {
 
@@ -133,8 +137,8 @@ function criarNiveis() {
     respostaIncorreta3 = containerPergunta[i].querySelector('.respostaIncorreta3').value;
     imagemIncorreta3 = containerPergunta[i].querySelector('.imagemIncorreta3').value;
 
-    console.log('respostaIncorreta1 dentro do for', respostaIncorreta1)
-    console.log('respostaIncorreta1 dentro do for', imagemIncorreta1)
+    console.log('respostaIncorreta1 dentro do for', respostaIncorreta1);
+    console.log('respostaIncorreta1 dentro do for', imagemIncorreta1);
 
     if (tituloDaPergunta.length < 20) {
       alert("Título contém entre 20 à 65 caracteres");
@@ -204,8 +208,8 @@ function criarNiveis() {
     pergunta.questions = [...pergunta.questions, pergContinuacao];
     console.log('pergunta.questions aqui::', pergunta.questions);
   }
-  console.log('respostaIncorreta1 fora do for', respostaIncorreta1)
-  console.log('respostaIncorreta1 fora do for', imagemIncorreta1)
+  console.log('respostaIncorreta1 fora do for', respostaIncorreta1);
+  console.log('respostaIncorreta1 fora do for', imagemIncorreta1);
   renderizarNiveisQuizz();
 }
 
@@ -231,14 +235,20 @@ function renderizarNiveisQuizz() {
   for (let i = 0; i < qntNivel; i++) {
     renderizaNiveis.innerHTML += `
     <div data-test="level-ctn" class="nivel container-niveis">
-    <p>Nível ${i + 1}</p>
-    <input data-test="level-input" class="tituloNivel1" type="text" placeholder="Título do nível" name="Nivel Titulo">
-    <input data-test="level-percent-input" class="porcentagNivel1" type="text" placeholder="% de acerto mínima" name="Nivel Valor">
-    <input data-test="level-img-input" class="imagemNivel1" type="text" placeholder="URL da imagem do nível" name="Imagens">
-    <input data-test="level-description-input" class="descricaoNivel1" type="text" placeholder="Descrição do nível" name="Nivel Texto">
+    <div class="nivel-t3">
+      <p>Nível ${i + 1}</p>
+      <button data-test="toggle" onclick="alternar('.conteudo-nivel-t3', ${i})"></button>
+    </div>
+    <div class="conteudo-nivel-t3">
+      <input data-test="level-input" class="tituloNivel1" type="text" placeholder="Título do nível" name="Nivel Titulo">
+      <input data-test="level-percent-input" class="porcentagNivel1" type="text" placeholder="% de acerto mínima" name="Nivel Valor">
+      <input data-test="level-img-input" class="imagemNivel1" type="text" placeholder="URL da imagem do nível" name="Imagens">
+      <input data-test="level-description-input" class="descricaoNivel1" type="text" placeholder="Descrição do nível" name="Nivel Texto">
+    </div>
   </div>
     `;
   }
+  alternar('.conteudo-nivel-t3', 0);
 }
 
 
@@ -354,9 +364,9 @@ function acessarOQuizTela2() {
   const t3 = document.querySelector('.ultimaTela-t3');
   t3.classList.add('escondido');
 
-  getQuizz(idsQuizzesUsuario[idsQuizzesUsuario.length - 1])
-console.log("o que tá vindo idsQuizzesUsuario:", idsQuizzesUsuario)
-console.log('idsQuizzesUsuario[idsQuizzesUsuario.length - 1]', idsQuizzesUsuario[idsQuizzesUsuario.length - 1])
+  getQuizz(idsQuizzesUsuario[idsQuizzesUsuario.length - 1]);
+  console.log("o que tá vindo idsQuizzesUsuario:", idsQuizzesUsuario);
+  console.log('idsQuizzesUsuario[idsQuizzesUsuario.length - 1]', idsQuizzesUsuario[idsQuizzesUsuario.length - 1]);
 }
 function voltarInicioTela1() {
   limpaCampos();
@@ -372,4 +382,16 @@ function voltarInicioTela1() {
 
 function limpaCampos() {
   document.querySelectorAll('input').forEach(campo => campo.value = "");
+}
+
+function alternar(classNome, index) {
+  elemento = document.querySelectorAll(classNome);
+  elemento.forEach(element => {
+    console.log(element.classList.contains('escondido'));
+    if (!element.classList.contains('escondido')) {
+      element.classList.add('escondido');
+    }
+  });
+  elemento[index].classList.toggle('escondido');
+  elemento[index].scrollIntoView();
 }
