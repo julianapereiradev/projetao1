@@ -255,6 +255,7 @@ button {
     left: 18px;
     color: #FFFFFF;
     z-index: 1;
+    word-break: break-all
 }
 
 .caixinha-quiz-usuario-t1:hover {
