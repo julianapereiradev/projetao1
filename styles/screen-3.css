@@ -152,6 +152,7 @@ body {
   margin-left: auto;
   padding: 0px;
   outline: none;
+  border: none;
 }
 
 .box-niveis-form-t3 {
@@ -199,11 +200,7 @@ body {
   left: 10px;
 }
 
-.acessarQuizz {
-  width: 220.32px;
-  height: 44px;
-  margin-top: 40px;
-}
+
 
 .buttonHome {
   background-color: transparent;
@@ -215,6 +212,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none
 }
 
 input {
@@ -246,7 +244,7 @@ input {
   margin-top: 30px;
 }
 
-button {
+.buttonCriarPerguntas, .buttonCriarNiveis, .buttonFinalizarQuizz, .acessarQuizz {
   width: 368.86px;
   height: 54px;
   background: #EC362D;
@@ -263,6 +261,12 @@ button {
   font-size: 21px;
   line-height: 25px;
   color: #FFF5F4;
+}
+
+.renderizaImgQuizz .acessarQuizz {
+  width: 220.32px;
+  height: 44px;
+  margin-top: 40px;
 }
 
 .textoECorPergunta {

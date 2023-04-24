@@ -129,6 +129,7 @@ const backToHome = () => {
   quizz.classList.add('hidden-t2');
   console.log(document.querySelectorAll('.answer-t2'));
   voltarInicioTela1();
+  document.body.scrollIntoView();
 
 };
 

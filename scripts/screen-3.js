@@ -14,7 +14,7 @@ let tituloDaPergunta;
 let colorDaPergunta; let respostaCerta; let imagemDaRespostaCerta;
 let respostaIncorreta1; let imagemIncorreta1; let respostaIncorreta2; let imagemIncorreta2; let respostaIncorreta3; let imagemIncorreta3;
 let tituloDoNivel; let imagemDoNivel; let descricaoDoNivel; let porcentagemDoNivel;
-const idsQuizzesUsuario = [];
+let idsQuizzesUsuario = [];
 
 
 function criarPerguntas() {
@@ -315,6 +315,9 @@ function postCriarQuizz() {
 
 function sucessoAoPostarQuizz(respostaSucessoAoPostarQuizz) {
   console.log('respostaSucessoAoPostarQuizz aqui:', respostaSucessoAoPostarQuizz);
+  if (idsDeserializados) {
+    idsQuizzesUsuario = idsDeserializados
+  }
   idsQuizzesUsuario.push(respostaSucessoAoPostarQuizz.data.id);
   const idsSerializados = JSON.stringify(idsQuizzesUsuario);
   localStorage.setItem('ids', idsSerializados);
@@ -372,6 +375,7 @@ function voltarInicioTela1() {
   imagemDoQuizz = '';
   qtdePerguntas = '';
   qtdeNiveis = '';
+  decideLayout()
 }
 
 function limpaCampos() {

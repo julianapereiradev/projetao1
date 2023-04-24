@@ -36,6 +36,35 @@ body {
     padding-top: 77px;
 }
 
+button {
+    width: 360px;
+    height: 54px;
+    background: #ffffff;
+    border-radius: 15px;
+    border: 3px dotted #EC362D;
+    margin: 80px auto 20px;
+    font-size: 18px;
+    line-height: 21px;
+    color: white;
+  
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    color: #EC362D;
+}
+
+.header-quiz-usuario-t1 button {
+    background: #EC362D;
+    color: #FFF5F4;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+
 .usuario-sem-quiz-t1 {
     width: 100%;
     border: 1px dashed #D5D5D5;
