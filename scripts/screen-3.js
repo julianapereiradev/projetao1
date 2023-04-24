@@ -117,8 +117,10 @@ function criarNiveis() {
     levels: []
   };
 
+  console.log('respostaIncorreta1 antes do for', respostaIncorreta1)
+  console.log('respostaIncorreta1 antes do for', imagemIncorreta1)
 
-  for (i = 0; i < containerPergunta.length; i++) {
+  for (let i = 0; i < containerPergunta.length; i++) {
 
     tituloDaPergunta = containerPergunta[i].querySelector('.tituloPergunta1').value;
     colorDaPergunta = containerPergunta[i].querySelector('.corDaPergunta').value;
@@ -130,6 +132,9 @@ function criarNiveis() {
     imagemIncorreta2 = containerPergunta[i].querySelector('.imagemIncorreta2').value;
     respostaIncorreta3 = containerPergunta[i].querySelector('.respostaIncorreta3').value;
     imagemIncorreta3 = containerPergunta[i].querySelector('.imagemIncorreta3').value;
+
+    console.log('respostaIncorreta1 dentro do for', respostaIncorreta1)
+    console.log('respostaIncorreta1 dentro do for', imagemIncorreta1)
 
     if (tituloDaPergunta.length < 20) {
       alert("Título contém entre 20 à 65 caracteres");
@@ -148,11 +153,11 @@ function criarNiveis() {
       return;
     }
     if (respostaIncorreta1 === '') {
-      alert("Você tem que ter pelo menos uma resposta incorreta em cada pergunta");
+      alert("Você tem que ter pelo menos uma resposta incorreta em cada pergunta 1");
       return;
     }
-    if (validacaoURL(imagemIncorreta1) === '') {
-      alert("Colocar formato correto da URL de resposta incorreta");
+    if (validacaoURL(imagemIncorreta1) === false) {
+      alert("Colocar formato correto da URL de resposta incorreta 1");
       return;
     }
 
@@ -173,6 +178,10 @@ function criarNiveis() {
       ]
     };
     if (respostaIncorreta2 !== '' && respostaIncorreta2 !== undefined && respostaIncorreta2 !== null) {
+      if (validacaoURL(imagemIncorreta2) === false) {
+        alert("Colocar formato correto da URL de resposta incorreta 2");
+        return;
+      }
       pergContinuacao.answers.push(
         {
           text: respostaIncorreta2,
@@ -181,6 +190,10 @@ function criarNiveis() {
         });
     }
     if (respostaIncorreta3 !== '' && respostaIncorreta3 !== undefined && respostaIncorreta3 !== null) {
+      if (validacaoURL(imagemIncorreta3) === false) {
+        alert("Colocar formato correto da URL de resposta incorreta 3");
+        return;
+      }
       pergContinuacao.answers.push(
         {
           text: respostaIncorreta3,
@@ -191,6 +204,8 @@ function criarNiveis() {
     pergunta.questions = [...pergunta.questions, pergContinuacao];
     console.log('pergunta.questions aqui::', pergunta.questions);
   }
+  console.log('respostaIncorreta1 fora do for', respostaIncorreta1)
+  console.log('respostaIncorreta1 fora do for', imagemIncorreta1)
   renderizarNiveisQuizz();
 }
 
