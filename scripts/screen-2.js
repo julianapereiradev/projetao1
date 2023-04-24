@@ -71,7 +71,7 @@ const getQuizz = id => {
                 level_title.textContent = `${precision}% de acerto: ${title}`;
 
                 const level_image = document.createElement('img');
-                level_image.setAttribute('data-test', 'level-image');
+                level_image.setAttribute('data-test', 'level-img');
                 level_image.setAttribute('src', image);
 
                 const level_text = document.createElement('p');
