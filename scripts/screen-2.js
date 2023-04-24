@@ -122,6 +122,7 @@ const backToHome = () => {
   console.log('Feche logo a página, ao inves de volta por home');
   quizz.classList.add('hidden-t2');
   console.log(document.querySelectorAll('.answer-t2'));
+  voltarInicioTela1();
 
 };
 

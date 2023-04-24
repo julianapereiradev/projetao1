@@ -336,7 +336,12 @@ function renderizaUltimaTela(imgQuizzDoInicio, titleQuizDoInicio) {
 }
 
 function acessarOQuizTela2() {
-  alert("Clicou para acessar o quizz");
+  const t3 = document.querySelector('.ultimaTela-t3');
+  t3.classList.add('escondido');
+
+  getQuizz(idsQuizzesUsuario[idsQuizzesUsuario.length - 1])
+console.log("o que tá vindo idsQuizzesUsuario:", idsQuizzesUsuario)
+console.log('idsQuizzesUsuario[idsQuizzesUsuario.length - 1]', idsQuizzesUsuario[idsQuizzesUsuario.length - 1])
 }
 function voltarInicioTela1() {
   limpaCampos();
