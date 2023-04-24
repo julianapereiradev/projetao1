@@ -26,6 +26,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    word-break: break-all;
 }
 
 .hidden-t2 {
@@ -112,6 +113,7 @@
     line-height: 15px;
     letter-spacing: 0em;
     text-align: left;
+    word-break: break-all;
 }
 
 .quizz-t2 .question-t2 .answer-t2 img {
@@ -151,6 +153,7 @@
 
     height: 99px;
     background-color: #EC362D;
+    word-break: break-all;
 }
 
 .level-t2 img {
@@ -169,6 +172,7 @@
     text-align: left;
     height: max-content;
     padding: 9px 0px;
+    word-break: break-all;
 }
 
 .btn-t2 {
