@@ -23,7 +23,7 @@ function decideLayout() {
     const semQuiz = document.querySelector('.usuario-sem-quiz-t1');
     const comQuiz = document.querySelector('.usuario-com-quiz-t1');
     const addQuiz = document.querySelector('.caixa-quiz-usuario-t1');
-    if (idsDeserializados.length === 0 || idsDeserializados.length === null || idsDeserializados.length === undefined) {
+    if (!idsDeserializados || idsDeserializados === null) {
         semQuiz.classList.remove('escondido');
         comQuiz.classList.add('escondido');
     } else {
@@ -34,7 +34,7 @@ function decideLayout() {
 
         for (let i = 0; i < idsDeserializados.length; i++) {
             console.log('idsDeserializados[i] dentro do for:', idsDeserializados[i])
-            const promise = axios.get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/' + idsDeserializados[i]);
+            const promise = axios.get('https://mock-api.driven.com.br/api/vm/buzzquizz/quizzes/' + idsDeserializados[i]["id"]);
             promise.then(function (render) {
                 console.log('render aqui::', render)
                 addQuiz.innerHTML += `

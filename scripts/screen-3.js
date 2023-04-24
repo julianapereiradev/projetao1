@@ -74,7 +74,7 @@ function renderizarPerguntasQuizz() {
 
   const renderizaPerguntas = document.querySelector('.renderizaPerguntas');
 
-
+  renderizaPerguntas.innerHTML = ""
   for (let i = 0; i < qntPergunta; i++) {
     renderizaPerguntas.innerHTML += `
 <div data-test="question-ctn" class="container-pergunta box-perguntas-t3">
@@ -228,6 +228,7 @@ function renderizarNiveisQuizz() {
 
   const renderizaNiveis = document.querySelector('.renderizaNiveis');
 
+  renderizaNiveis.innerHTML = ""
   for (let i = 0; i < qntNivel; i++) {
     renderizaNiveis.innerHTML += `
     <div data-test="level-ctn" class="nivel container-niveis">
@@ -318,7 +319,7 @@ function sucessoAoPostarQuizz(respostaSucessoAoPostarQuizz) {
   if (idsDeserializados) {
     idsQuizzesUsuario = idsDeserializados
   }
-  idsQuizzesUsuario.push(respostaSucessoAoPostarQuizz.data.id);
+  idsQuizzesUsuario.push({"id": respostaSucessoAoPostarQuizz.data.id});
   const idsSerializados = JSON.stringify(idsQuizzesUsuario);
   localStorage.setItem('ids', idsSerializados);
   finalizaQuizz();
@@ -348,7 +349,7 @@ function finalizaQuizz() {
 function renderizaUltimaTela(imgQuizzDoInicio, titleQuizDoInicio) {
   const renderizaImagemQuiz = document.querySelector('.renderizaImgQuizz');
 
-  renderizaImagemQuiz.innerHTML += `
+  renderizaImagemQuiz.innerHTML = `
   <div data-test="success-banner">
   <img class="imgQuizzDoInicio" src="${imgQuizzDoInicio}">
   <p>${titleQuizDoInicio}</p>
@@ -361,7 +362,7 @@ function acessarOQuizTela2() {
   const t3 = document.querySelector('.ultimaTela-t3');
   t3.classList.add('escondido');
 
-  getQuizz(idsQuizzesUsuario[idsQuizzesUsuario.length - 1]);
+  getQuizz(idsQuizzesUsuario[idsQuizzesUsuario.length - 1]["id"]);
   console.log("o que tá vindo idsQuizzesUsuario:", idsQuizzesUsuario);
   console.log('idsQuizzesUsuario[idsQuizzesUsuario.length - 1]', idsQuizzesUsuario[idsQuizzesUsuario.length - 1]);
 }
