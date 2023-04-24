@@ -154,8 +154,7 @@ button {
     left: 18px;
     color: #FFFFFF;
     z-index: 1;
-    word-break: break-all;
-
+    overflow-wrap: break-word;
 }
 
 .caixinha-quiz-t1:hover {
