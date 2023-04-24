@@ -59,11 +59,8 @@ const getQuizz = id => {
                 let correct = document.querySelectorAll('.true.pressed-t2');
                 let precision = Math.round((100 * correct.length / questions.length));
 
-                test = getLevel(precision, levels);
-                console.log(test, 'aqui o test de obtenção do level pela precision');
-
-                // title, image, text, 
-                // const {title, image, text} = levels
+                const { title, image, text } = getLevel(precision, levels);
+                console.log(title, image, text)
 
                 const level_title = document.createElement('h3');
                 level_title.setAttribute('data-test', 'level-title');
@@ -159,7 +156,7 @@ const getLevel = (precision, levels) => {
   array = [...levels.map(level => level[0])];
   array.push(precision);
   array.sort((a, b) => a - b);
-  return levels[array.lastIndexOf(precision) - 1];
+  return levels[array.lastIndexOf(precision) - 1][1];
 };
 
 
